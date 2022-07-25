@@ -28,11 +28,11 @@ mixin _$CardModel {
   String get levelupDescriptionRaw => throw _privateConstructorUsedError;
   String get flavorText => throw _privateConstructorUsedError;
   String get artistName => throw _privateConstructorUsedError;
-  String get cardName => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String get cardCode => throw _privateConstructorUsedError;
-  List<Keywords> get keywords => throw _privateConstructorUsedError;
-  SpellSpeed get spellSpeed => throw _privateConstructorUsedError;
-  CardType get cardType => throw _privateConstructorUsedError;
+  List<Keywords> get keywordRefs => throw _privateConstructorUsedError;
+  SpellSpeed? get spellSpeed => throw _privateConstructorUsedError;
+  CardType get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,11 +53,11 @@ abstract class $CardModelCopyWith<$Res> {
       String levelupDescriptionRaw,
       String flavorText,
       String artistName,
-      String cardName,
+      String name,
       String cardCode,
-      List<Keywords> keywords,
-      SpellSpeed spellSpeed,
-      CardType cardType});
+      List<Keywords> keywordRefs,
+      SpellSpeed? spellSpeed,
+      CardType type});
 }
 
 /// @nodoc
@@ -78,11 +78,11 @@ class _$CardModelCopyWithImpl<$Res> implements $CardModelCopyWith<$Res> {
     Object? levelupDescriptionRaw = freezed,
     Object? flavorText = freezed,
     Object? artistName = freezed,
-    Object? cardName = freezed,
+    Object? name = freezed,
     Object? cardCode = freezed,
-    Object? keywords = freezed,
+    Object? keywordRefs = freezed,
     Object? spellSpeed = freezed,
-    Object? cardType = freezed,
+    Object? type = freezed,
   }) {
     return _then(_value.copyWith(
       regions: regions == freezed
@@ -117,25 +117,25 @@ class _$CardModelCopyWithImpl<$Res> implements $CardModelCopyWith<$Res> {
           ? _value.artistName
           : artistName // ignore: cast_nullable_to_non_nullable
               as String,
-      cardName: cardName == freezed
-          ? _value.cardName
-          : cardName // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       cardCode: cardCode == freezed
           ? _value.cardCode
           : cardCode // ignore: cast_nullable_to_non_nullable
               as String,
-      keywords: keywords == freezed
-          ? _value.keywords
-          : keywords // ignore: cast_nullable_to_non_nullable
+      keywordRefs: keywordRefs == freezed
+          ? _value.keywordRefs
+          : keywordRefs // ignore: cast_nullable_to_non_nullable
               as List<Keywords>,
       spellSpeed: spellSpeed == freezed
           ? _value.spellSpeed
           : spellSpeed // ignore: cast_nullable_to_non_nullable
-              as SpellSpeed,
-      cardType: cardType == freezed
-          ? _value.cardType
-          : cardType // ignore: cast_nullable_to_non_nullable
+              as SpellSpeed?,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as CardType,
     ));
   }
@@ -156,11 +156,11 @@ abstract class _$$_CardModelCopyWith<$Res> implements $CardModelCopyWith<$Res> {
       String levelupDescriptionRaw,
       String flavorText,
       String artistName,
-      String cardName,
+      String name,
       String cardCode,
-      List<Keywords> keywords,
-      SpellSpeed spellSpeed,
-      CardType cardType});
+      List<Keywords> keywordRefs,
+      SpellSpeed? spellSpeed,
+      CardType type});
 }
 
 /// @nodoc
@@ -183,11 +183,11 @@ class __$$_CardModelCopyWithImpl<$Res> extends _$CardModelCopyWithImpl<$Res>
     Object? levelupDescriptionRaw = freezed,
     Object? flavorText = freezed,
     Object? artistName = freezed,
-    Object? cardName = freezed,
+    Object? name = freezed,
     Object? cardCode = freezed,
-    Object? keywords = freezed,
+    Object? keywordRefs = freezed,
     Object? spellSpeed = freezed,
-    Object? cardType = freezed,
+    Object? type = freezed,
   }) {
     return _then(_$_CardModel(
       regions: regions == freezed
@@ -222,25 +222,25 @@ class __$$_CardModelCopyWithImpl<$Res> extends _$CardModelCopyWithImpl<$Res>
           ? _value.artistName
           : artistName // ignore: cast_nullable_to_non_nullable
               as String,
-      cardName: cardName == freezed
-          ? _value.cardName
-          : cardName // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       cardCode: cardCode == freezed
           ? _value.cardCode
           : cardCode // ignore: cast_nullable_to_non_nullable
               as String,
-      keywords: keywords == freezed
-          ? _value._keywords
-          : keywords // ignore: cast_nullable_to_non_nullable
+      keywordRefs: keywordRefs == freezed
+          ? _value._keywordRefs
+          : keywordRefs // ignore: cast_nullable_to_non_nullable
               as List<Keywords>,
       spellSpeed: spellSpeed == freezed
           ? _value.spellSpeed
           : spellSpeed // ignore: cast_nullable_to_non_nullable
-              as SpellSpeed,
-      cardType: cardType == freezed
-          ? _value.cardType
-          : cardType // ignore: cast_nullable_to_non_nullable
+              as SpellSpeed?,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as CardType,
     ));
   }
@@ -258,13 +258,13 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
       required this.levelupDescriptionRaw,
       required this.flavorText,
       required this.artistName,
-      required this.cardName,
+      required this.name,
       required this.cardCode,
-      required final List<Keywords> keywords,
-      required this.spellSpeed,
-      required this.cardType})
+      required final List<Keywords> keywordRefs,
+      this.spellSpeed,
+      required this.type})
       : _regions = regions,
-        _keywords = keywords;
+        _keywordRefs = keywordRefs;
 
   factory _$_CardModel.fromJson(Map<String, dynamic> json) =>
       _$$_CardModelFromJson(json);
@@ -291,24 +291,24 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
   @override
   final String artistName;
   @override
-  final String cardName;
+  final String name;
   @override
   final String cardCode;
-  final List<Keywords> _keywords;
+  final List<Keywords> _keywordRefs;
   @override
-  List<Keywords> get keywords {
+  List<Keywords> get keywordRefs {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_keywords);
+    return EqualUnmodifiableListView(_keywordRefs);
   }
 
   @override
-  final SpellSpeed spellSpeed;
+  final SpellSpeed? spellSpeed;
   @override
-  final CardType cardType;
+  final CardType type;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CardModel(regions: $regions, attack: $attack, cost: $cost, health: $health, descriptionRaw: $descriptionRaw, levelupDescriptionRaw: $levelupDescriptionRaw, flavorText: $flavorText, artistName: $artistName, cardName: $cardName, cardCode: $cardCode, keywords: $keywords, spellSpeed: $spellSpeed, cardType: $cardType)';
+    return 'CardModel(regions: $regions, attack: $attack, cost: $cost, health: $health, descriptionRaw: $descriptionRaw, levelupDescriptionRaw: $levelupDescriptionRaw, flavorText: $flavorText, artistName: $artistName, name: $name, cardCode: $cardCode, keywordRefs: $keywordRefs, spellSpeed: $spellSpeed, type: $type)';
   }
 
   @override
@@ -324,11 +324,11 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
       ..add(DiagnosticsProperty('levelupDescriptionRaw', levelupDescriptionRaw))
       ..add(DiagnosticsProperty('flavorText', flavorText))
       ..add(DiagnosticsProperty('artistName', artistName))
-      ..add(DiagnosticsProperty('cardName', cardName))
+      ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('cardCode', cardCode))
-      ..add(DiagnosticsProperty('keywords', keywords))
+      ..add(DiagnosticsProperty('keywordRefs', keywordRefs))
       ..add(DiagnosticsProperty('spellSpeed', spellSpeed))
-      ..add(DiagnosticsProperty('cardType', cardType));
+      ..add(DiagnosticsProperty('type', type));
   }
 
   @override
@@ -348,12 +348,13 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
                 .equals(other.flavorText, flavorText) &&
             const DeepCollectionEquality()
                 .equals(other.artistName, artistName) &&
-            const DeepCollectionEquality().equals(other.cardName, cardName) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.cardCode, cardCode) &&
-            const DeepCollectionEquality().equals(other._keywords, _keywords) &&
+            const DeepCollectionEquality()
+                .equals(other._keywordRefs, _keywordRefs) &&
             const DeepCollectionEquality()
                 .equals(other.spellSpeed, spellSpeed) &&
-            const DeepCollectionEquality().equals(other.cardType, cardType));
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @JsonKey(ignore: true)
@@ -368,11 +369,11 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
       const DeepCollectionEquality().hash(levelupDescriptionRaw),
       const DeepCollectionEquality().hash(flavorText),
       const DeepCollectionEquality().hash(artistName),
-      const DeepCollectionEquality().hash(cardName),
+      const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(cardCode),
-      const DeepCollectionEquality().hash(_keywords),
+      const DeepCollectionEquality().hash(_keywordRefs),
       const DeepCollectionEquality().hash(spellSpeed),
-      const DeepCollectionEquality().hash(cardType));
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -395,11 +396,11 @@ abstract class _CardModel implements CardModel {
       required final String levelupDescriptionRaw,
       required final String flavorText,
       required final String artistName,
-      required final String cardName,
+      required final String name,
       required final String cardCode,
-      required final List<Keywords> keywords,
-      required final SpellSpeed spellSpeed,
-      required final CardType cardType}) = _$_CardModel;
+      required final List<Keywords> keywordRefs,
+      final SpellSpeed? spellSpeed,
+      required final CardType type}) = _$_CardModel;
 
   factory _CardModel.fromJson(Map<String, dynamic> json) =
       _$_CardModel.fromJson;
@@ -421,15 +422,15 @@ abstract class _CardModel implements CardModel {
   @override
   String get artistName;
   @override
-  String get cardName;
+  String get name;
   @override
   String get cardCode;
   @override
-  List<Keywords> get keywords;
+  List<Keywords> get keywordRefs;
   @override
-  SpellSpeed get spellSpeed;
+  SpellSpeed? get spellSpeed;
   @override
-  CardType get cardType;
+  CardType get type;
   @override
   @JsonKey(ignore: true)
   _$$_CardModelCopyWith<_$_CardModel> get copyWith =>

@@ -17,13 +17,17 @@ enum CardType {
 }
 
 enum Region {
+  @JsonValue('Bandle City')
   BandleCity,
   Bilgewater,
   Demacia,
   Freljord,
   Ionia,
   Noxus,
+  @JsonValue('Piltover & Zaun')
   PiltoverAndZaun,
+  Runeterra,
+  @JsonValue('Shadow Isles')
   ShadowIsles,
   Shurima,
   Targon,
@@ -33,10 +37,13 @@ enum Keywords {
   Attach,
   Attune,
   Augment,
+  Autoplay,
   Burst,
+  Barrier,
   Challenger,
   Countdown,
-  DoubleAttack,
+  Deep,
+  DoubleStrike,
   Elusive,
   Ephemeral,
   Fast,
@@ -46,29 +53,38 @@ enum Keywords {
   Formidable,
   Fury,
   Imbue,
+  Immobile,
   Impact,
   Landmark,
+  LandmarkVisualOnly,
   LastBreath,
   Lifesteal,
+  Lurker,
   MissingTranslation,
   Overwhelm,
-  QuickAttack,
+  QuickStrike,
   Regeneration,
   Scout,
   Skill,
   Slow,
   SpellShield,
+  Support,
   Tough,
   Trap,
+  Vulnerable,
+  @JsonValue('AuraVisualFakeKeyword')
+  None,
 }
 
 enum SpellSpeed {
+  @JsonValue('')
+  None,
   Burst,
   Fast,
   Slow,
 }
 
-@freezed
+@Freezed()
 class CardModel with _$CardModel {
   const factory CardModel({
     required List<Region> regions,
@@ -79,11 +95,11 @@ class CardModel with _$CardModel {
     required String levelupDescriptionRaw,
     required String flavorText,
     required String artistName,
-    required String cardName,
+    required String name,
     required String cardCode,
-    required List<Keywords> keywords,
-    required SpellSpeed spellSpeed,
-    required CardType cardType,
+    required List<Keywords> keywordRefs,
+    SpellSpeed? spellSpeed,
+    required CardType type,
   }) = _CardModel;
 
   factory CardModel.fromJson(Map<String, Object?> json) => _$CardModelFromJson(json);

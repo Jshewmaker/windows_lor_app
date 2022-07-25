@@ -1,0 +1,1 @@
+need to edit jsonseriliable so it accepts empty enums.
