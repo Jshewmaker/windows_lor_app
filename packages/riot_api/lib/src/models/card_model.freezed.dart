@@ -30,6 +30,8 @@ mixin _$CardModel {
   String get artistName => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get cardCode => throw _privateConstructorUsedError;
+  List<String> get associatedCards => throw _privateConstructorUsedError;
+  List<String> get associatedCardRefs => throw _privateConstructorUsedError;
   List<Keywords> get keywordRefs => throw _privateConstructorUsedError;
   SpellSpeed? get spellSpeed => throw _privateConstructorUsedError;
   CardType get type => throw _privateConstructorUsedError;
@@ -55,6 +57,8 @@ abstract class $CardModelCopyWith<$Res> {
       String artistName,
       String name,
       String cardCode,
+      List<String> associatedCards,
+      List<String> associatedCardRefs,
       List<Keywords> keywordRefs,
       SpellSpeed? spellSpeed,
       CardType type});
@@ -80,6 +84,8 @@ class _$CardModelCopyWithImpl<$Res> implements $CardModelCopyWith<$Res> {
     Object? artistName = freezed,
     Object? name = freezed,
     Object? cardCode = freezed,
+    Object? associatedCards = freezed,
+    Object? associatedCardRefs = freezed,
     Object? keywordRefs = freezed,
     Object? spellSpeed = freezed,
     Object? type = freezed,
@@ -125,6 +131,14 @@ class _$CardModelCopyWithImpl<$Res> implements $CardModelCopyWith<$Res> {
           ? _value.cardCode
           : cardCode // ignore: cast_nullable_to_non_nullable
               as String,
+      associatedCards: associatedCards == freezed
+          ? _value.associatedCards
+          : associatedCards // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      associatedCardRefs: associatedCardRefs == freezed
+          ? _value.associatedCardRefs
+          : associatedCardRefs // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       keywordRefs: keywordRefs == freezed
           ? _value.keywordRefs
           : keywordRefs // ignore: cast_nullable_to_non_nullable
@@ -158,6 +172,8 @@ abstract class _$$_CardModelCopyWith<$Res> implements $CardModelCopyWith<$Res> {
       String artistName,
       String name,
       String cardCode,
+      List<String> associatedCards,
+      List<String> associatedCardRefs,
       List<Keywords> keywordRefs,
       SpellSpeed? spellSpeed,
       CardType type});
@@ -185,6 +201,8 @@ class __$$_CardModelCopyWithImpl<$Res> extends _$CardModelCopyWithImpl<$Res>
     Object? artistName = freezed,
     Object? name = freezed,
     Object? cardCode = freezed,
+    Object? associatedCards = freezed,
+    Object? associatedCardRefs = freezed,
     Object? keywordRefs = freezed,
     Object? spellSpeed = freezed,
     Object? type = freezed,
@@ -230,6 +248,14 @@ class __$$_CardModelCopyWithImpl<$Res> extends _$CardModelCopyWithImpl<$Res>
           ? _value.cardCode
           : cardCode // ignore: cast_nullable_to_non_nullable
               as String,
+      associatedCards: associatedCards == freezed
+          ? _value._associatedCards
+          : associatedCards // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      associatedCardRefs: associatedCardRefs == freezed
+          ? _value._associatedCardRefs
+          : associatedCardRefs // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       keywordRefs: keywordRefs == freezed
           ? _value._keywordRefs
           : keywordRefs // ignore: cast_nullable_to_non_nullable
@@ -260,10 +286,14 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
       required this.artistName,
       required this.name,
       required this.cardCode,
+      required final List<String> associatedCards,
+      required final List<String> associatedCardRefs,
       required final List<Keywords> keywordRefs,
       this.spellSpeed,
       required this.type})
       : _regions = regions,
+        _associatedCards = associatedCards,
+        _associatedCardRefs = associatedCardRefs,
         _keywordRefs = keywordRefs;
 
   factory _$_CardModel.fromJson(Map<String, dynamic> json) =>
@@ -294,6 +324,20 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
   final String name;
   @override
   final String cardCode;
+  final List<String> _associatedCards;
+  @override
+  List<String> get associatedCards {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_associatedCards);
+  }
+
+  final List<String> _associatedCardRefs;
+  @override
+  List<String> get associatedCardRefs {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_associatedCardRefs);
+  }
+
   final List<Keywords> _keywordRefs;
   @override
   List<Keywords> get keywordRefs {
@@ -308,7 +352,7 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CardModel(regions: $regions, attack: $attack, cost: $cost, health: $health, descriptionRaw: $descriptionRaw, levelupDescriptionRaw: $levelupDescriptionRaw, flavorText: $flavorText, artistName: $artistName, name: $name, cardCode: $cardCode, keywordRefs: $keywordRefs, spellSpeed: $spellSpeed, type: $type)';
+    return 'CardModel(regions: $regions, attack: $attack, cost: $cost, health: $health, descriptionRaw: $descriptionRaw, levelupDescriptionRaw: $levelupDescriptionRaw, flavorText: $flavorText, artistName: $artistName, name: $name, cardCode: $cardCode, associatedCards: $associatedCards, associatedCardRefs: $associatedCardRefs, keywordRefs: $keywordRefs, spellSpeed: $spellSpeed, type: $type)';
   }
 
   @override
@@ -326,6 +370,8 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
       ..add(DiagnosticsProperty('artistName', artistName))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('cardCode', cardCode))
+      ..add(DiagnosticsProperty('associatedCards', associatedCards))
+      ..add(DiagnosticsProperty('associatedCardRefs', associatedCardRefs))
       ..add(DiagnosticsProperty('keywordRefs', keywordRefs))
       ..add(DiagnosticsProperty('spellSpeed', spellSpeed))
       ..add(DiagnosticsProperty('type', type));
@@ -351,6 +397,10 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.cardCode, cardCode) &&
             const DeepCollectionEquality()
+                .equals(other._associatedCards, _associatedCards) &&
+            const DeepCollectionEquality()
+                .equals(other._associatedCardRefs, _associatedCardRefs) &&
+            const DeepCollectionEquality()
                 .equals(other._keywordRefs, _keywordRefs) &&
             const DeepCollectionEquality()
                 .equals(other.spellSpeed, spellSpeed) &&
@@ -371,6 +421,8 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
       const DeepCollectionEquality().hash(artistName),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(cardCode),
+      const DeepCollectionEquality().hash(_associatedCards),
+      const DeepCollectionEquality().hash(_associatedCardRefs),
       const DeepCollectionEquality().hash(_keywordRefs),
       const DeepCollectionEquality().hash(spellSpeed),
       const DeepCollectionEquality().hash(type));
@@ -382,7 +434,9 @@ class _$_CardModel with DiagnosticableTreeMixin implements _CardModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardModelToJson(this);
+    return _$$_CardModelToJson(
+      this,
+    );
   }
 }
 
@@ -398,6 +452,8 @@ abstract class _CardModel implements CardModel {
       required final String artistName,
       required final String name,
       required final String cardCode,
+      required final List<String> associatedCards,
+      required final List<String> associatedCardRefs,
       required final List<Keywords> keywordRefs,
       final SpellSpeed? spellSpeed,
       required final CardType type}) = _$_CardModel;
@@ -425,6 +481,10 @@ abstract class _CardModel implements CardModel {
   String get name;
   @override
   String get cardCode;
+  @override
+  List<String> get associatedCards;
+  @override
+  List<String> get associatedCardRefs;
   @override
   List<Keywords> get keywordRefs;
   @override

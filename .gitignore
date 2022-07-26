@@ -9,6 +9,7 @@
 .history
 .svn/
 assets/set_bundles/
+packages/riot_api/assets/set_bundles/
 # IntelliJ related
 *.iml
 *.ipr
