@@ -1,4 +1,6 @@
 import 'package:riot_api/riot_api.dart';
+import 'package:windows_lor_app/models/deck/deck.dart';
+import 'package:windows_lor_app/models/game/game.dart';
 import 'package:windows_lor_app/models/runeterra_card.dart';
 
 class GameRepository {
@@ -6,11 +8,16 @@ class GameRepository {
 
   final RiotApiClient _riotApiClient;
 
-  Stream<String> fetchGameState() async* {
+  Stream<Game> fetchGameState() async* {
     while (true) {
       await Future.delayed(const Duration(milliseconds: 1000));
-      final String response = await _riotApiClient.gameState();
-      yield response;
+      final response = await _riotApiClient.gameState();
+      yield Game(
+          playerName: response.playerName,
+          opponentName: response.opponentName,
+          gameState: response.gameState,
+          screen: response.screen,
+          rectangles: response.rectangles);
     }
   }
 

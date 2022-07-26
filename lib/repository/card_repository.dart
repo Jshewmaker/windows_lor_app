@@ -31,7 +31,7 @@ class CardRepository {
 
     for (int i = 1; i < 7; i++) {
       final String response = await rootBundle.loadString('assets/set_bundles/set_$i/en_us/data/set$i-en_us.json');
-      final List<dynamic> jsonRes = jsonDecode(response);
+      final List<CardModel> jsonRes = jsonDecode(response);
       allCards.addAll(jsonRes);
     }
 

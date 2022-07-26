@@ -12,9 +12,9 @@ class GameRequested extends GameEvent {
 }
 
 class GameStatusUpdated extends GameEvent {
-  final String status;
+  final Game game;
 
-  const GameStatusUpdated({required this.status});
+  const GameStatusUpdated({required this.game});
   @override
   List<Object> get props => [];
 }
