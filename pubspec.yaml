@@ -71,6 +71,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/set_bundles/set_1/en_us/img/cards/
+    - assets/set_bundles/set_2/en_us/img/cards/
+    - assets/set_bundles/set_3/en_us/img/cards/
+    - assets/set_bundles/set_4/en_us/img/cards/
+    - assets/set_bundles/set_5/en_us/img/cards/
+    - assets/set_bundles/set_6/en_us/img/cards/
     - assets/set_bundles/set_1/en_us/data/set1-en_us.json
     - assets/set_bundles/set_2/en_us/data/set2-en_us.json
     - assets/set_bundles/set_3/en_us/data/set3-en_us.json

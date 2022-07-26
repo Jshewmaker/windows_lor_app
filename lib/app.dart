@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:windows_lor_app/repository/set_repository.dart';
+import 'package:windows_lor_app/repository/card_repository.dart';
 
 import 'cards/views/home_view.dart';
 
@@ -43,7 +43,7 @@ class LorAppView extends StatelessWidget {
           bodyText1: TextStyle(),
           bodyText2: TextStyle(),
         ).apply(bodyColor: Colors.white, displayColor: Colors.white),
-        scaffoldBackgroundColor: Colors.amber,
+        scaffoldBackgroundColor: Colors.black,
       ),
       home: const MyHomePage(
         title: 'My Lor App',

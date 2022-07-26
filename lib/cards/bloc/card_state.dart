@@ -13,7 +13,7 @@ class CardLoading extends CardState {
 class CardLoadSuccess extends CardState {
   const CardLoadSuccess({required this.card});
 
-  final List<CardModel> card;
+  final List<RuneterraCard> card;
 
   @override
   List<Object> get props => [card];
