@@ -14,7 +14,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     on<GameRequested>(_fetchGameState);
     on<GameStatusUpdated>(_fetchDeck);
     on<LiveDeckRequested>(((event, emit) async {
-      emit(GameLoading());
+      // emit(GameLoading());
       try {
         final deck = await _gameRepository.fetchDeck();
         emit(DeckLoadSuccess(deck: deck));
@@ -36,7 +36,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     if (event.game.gameState == 'InProgress') {
       add(const LiveDeckRequested());
     } else {
-      emit(GameLoadSuccess(status: event.game.gameState ?? 'error'));
+      emit(GameLoadSuccess(status: event.game.gameState ?? 'Open Legends of Runeterra'));
     }
   }
 }

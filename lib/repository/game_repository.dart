@@ -1,5 +1,4 @@
 import 'package:riot_api/riot_api.dart';
-import 'package:windows_lor_app/models/deck/deck.dart';
 import 'package:windows_lor_app/models/game/game.dart';
 import 'package:windows_lor_app/models/runeterra_card.dart';
 
@@ -12,6 +11,7 @@ class GameRepository {
     while (true) {
       await Future.delayed(const Duration(milliseconds: 1000));
       final response = await _riotApiClient.gameState();
+      print('value: ${response.gameState}');
       yield Game(
           playerName: response.playerName,
           opponentName: response.opponentName,
